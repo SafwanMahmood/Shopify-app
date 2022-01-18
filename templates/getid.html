@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Inventory App</title>
+</head>
+<body>
+{% block content %}
+    <h1>{% block title %} Enter product id {% endblock %}</h1>
+
+    <form method="POST" action="">
+        {{ form.csrf_token }}
+
+        <p>
+            {{ form.product_id.label }}
+            {{ form.product_id(size=10) }}
+        </p>
+      
+        {% if form.product_id.errors %}
+            <ul class="errors">
+                {% for error in form.product_id.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p>
+            <input type="submit" value="Submit">
+        </p>
+    </form>
+
+{% endblock %}
+<h3>Go to <a href="/"> Home page</a> </a> </h3>  
+</body>
+</html>

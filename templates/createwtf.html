@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Inventory App</title>
+</head>
+<body>
+{% block content %}
+    <h1>{% block title %} Add new product{% endblock %}</h1>
+
+    <form method="POST" action="">
+        {{ form.csrf_token }}
+        <p>
+            {{ form.product_id.label }}
+            {{ form.product_id(size=10)}}
+        </p>
+
+        {% if form.product_id.errors %}
+            <ul class="errors">
+                {% for error in form.product_id.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+            {{ form.name.label }}
+            {{ form.name(size=10) }}
+        </p>
+      
+
+        {% if form.name.errors %}
+            <ul class="errors">
+                {% for error in form.name.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+            {{ form.price.label }}
+            {{ form.price() }}
+        </p>
+
+        {% if form.price.errors %}
+            <ul class="errors">
+                {% for error in form.price.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+            {{ form.available_count.label }}
+            {{ form.available_count }} 
+        </p>
+
+        {% if form.available_count.errors %}
+            <ul class="errors">
+                {% for error in form.available_count.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+            <input type="submit" value="Create">
+        </p>
+    </form>
+
+{% endblock %}
+<h3>Go to <a href="/"> Home page</a> </a> </h3>  
+</body>
+</html>
