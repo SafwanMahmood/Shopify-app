@@ -16,3 +16,20 @@ http://localhost:5000/
 
 
 
+
+Schema design:
+Added few fields like 'product_id','name','price','available_count'
+
+Checks:
+Does typchecking/validations at client side and server side too. 
+
+Functions:
+Supports all CRUD functionalities.
+
+Features:
+Supports feathers like export CSV at all items level and a single item level after viewing the item.
+
+
+
+
+
